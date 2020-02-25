@@ -37,7 +37,9 @@ class MainActivity : AppCompatActivity() {
             when (result) {
                 is Result.Success -> {
                     result.data?.let { users ->
-                        if(result.data.isNotEmpty())count = users.last().uid
+                        if(result.data.isNotEmpty()){
+                            count = users.last().uid
+                        }
                         Toast.makeText(this, "last user: $count", Toast.LENGTH_LONG).show()
                         userRecyclerView.apply {
                             adapter =
